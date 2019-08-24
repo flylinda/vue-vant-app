@@ -23,7 +23,7 @@
           autocomplete
         />
       </van-cell-group>
-    <van-button type="primary" size="large" @click="commit">登录</van-button>
+    <van-button type="primary" size="large">登录</van-button>
     </form>
   </div>
 </template>
