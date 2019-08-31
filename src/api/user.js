@@ -1,4 +1,21 @@
 import request from '@/utils/request'
+require('../view/mock/mock.js')
+
+export function getList (params) {
+  return request({
+    url: '/api/mock/orderlist',
+    method: 'get',
+    params,
+  })
+}
+
+export function getHelp (params) {
+  return request({
+    url: '/api/mock/help',
+    method: 'get',
+    params,
+  })
+}
 
 export function getUserInfo (data) {
   return request({

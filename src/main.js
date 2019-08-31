@@ -11,6 +11,8 @@ Router.prototype.push = function push (location) {
   return originalPush.call(this, location).catch(err => err)
 }
 
+// require('./view/mock/mock.js')
+
 new Vue({
   router,
   render: h => h(App),

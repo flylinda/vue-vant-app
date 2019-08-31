@@ -20,6 +20,9 @@ module.exports = {
       open: true,
       host: 'localhost',
       proxy: {
+        '/auth-web': {
+          target: 'http: 192.168.22.52:8081',
+        },
         '/trustee': {
           target: 'https://devtrustee.alphalawyer.cn',
         },

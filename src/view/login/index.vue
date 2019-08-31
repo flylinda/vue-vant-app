@@ -5,31 +5,35 @@
       <van-cell-group class="login-info">
         <van-field
           v-model.trim="username"
-          required
           clearable
-          label="用户名"
+          left-icon="contact"
           placeholder="请输入用户名"
         />
 
         <van-field
           v-model.trim="password"
           type="password"
-          label="密码"
           placeholder="请输入密码"
-          right-icon="question-o"
-          @click-right-icon="$toast('忘记密码')"
-          required
+          left-icon="eye-o"
           clearable
           autocomplete
         />
       </van-cell-group>
-    <van-button type="primary" size="large">登录</van-button>
+      <div class="login-pwd">
+        <span>验证码登录</span>
+        <span @click="fogotPassword">忘记密码?</span>
+      </div>
+      <van-button type="primary" size="large">登录</van-button>
+      <div class="login-register">
+        <span class="login-register-account">没有账号？</span>
+        <span class="login-register-logon" @click="logon">立即注册</span>
+      </div>
     </form>
   </div>
 </template>
 
 <script>
-import { getUserInfo, getConfigs } from '@/api/user'
+import { getUserInfo, getConfigs, getList } from '@/api/user'
 import { setCookie } from '../../utils/cookie'
 export default {
   data () {
@@ -39,6 +43,12 @@ export default {
     }
   },
   methods: {
+    fogotPassword () {
+      this.$router.push('forgotPassword')
+    },
+    logon () {
+      this.$router.push('register')
+    },
     commit () {
       if (this.username === '') {
         this.$toast({ message: '请您输入用户名', duration: 1000 })
@@ -70,6 +80,16 @@ export default {
       )
     },
   },
+  mounted () {
+    getList().then(
+      res => {
+        if (res.isSuccess) {
+          this.username = res.data.username
+          this.password = res.data.password
+        }
+      }
+    )
+  },
 }
 </script>
 
@@ -80,14 +100,31 @@ export default {
       width: 100%;
       height: 53vw;
       display: block;
-    }
-    &-info {
-      margin-top: 15vw;
+      margin: 0 0 15vw 0;
     }
     &-btn {
       margin-top: 10vw;
       width: 90%;
       margin-left: 5%;
+    }
+    &-pwd {
+      display: flex;
+      justify-content:space-between;
+      margin:6px 16px;
+      font-size: 0.3rem;
+      color:#003a8c;
+      cursor:pointer;
+    }
+    &-register {
+      display: flex;
+      justify-content: center;
+      font-size: 0.3rem;
+      margin: 10px 0;
+      color: #003a8c;
+      cursor:pointer;
+      &-account {
+        color: gray;
+      }
     }
     .van-button--primary {
         color: #fff;
