@@ -4,6 +4,8 @@ import { router } from './router'
 import Router from 'vue-router'
 import Vant from 'vant'
 import 'vant/lib/index.css'
+import Viser from 'viser-vue'
+Vue.use(Viser)
 Vue.use(Vant)
 
 const originalPush = Router.prototype.push

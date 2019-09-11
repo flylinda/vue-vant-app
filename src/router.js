@@ -94,6 +94,13 @@ const routes = [
     },
   },
   {
+    name: 'dailyAnalysis',
+    component: () => import('./view/dailyAnalysis'),
+    meta: {
+      title: '日分析',
+    },
+  },
+  {
     name: 'user',
     component: () => import('./view/user'),
     meta: {

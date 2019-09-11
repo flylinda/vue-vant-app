@@ -1,6 +1,6 @@
 module.exports = {
   outputDir: './dist',
-  publicPath: process.env.NODE_ENV === 'production' ? '/dist/' : './',
+  publicPath: './',
   // 配置调用不同环境的接口
   chainWebpack: config => {
     config.plugin('define').tap(args => {

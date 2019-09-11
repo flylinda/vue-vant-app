@@ -70,9 +70,7 @@ export default {
             // 将token放在cookie中
             setCookie('token', res.data.userToken)
             getConfigs().then(
-              res => {
-                console.log('res---', res)
-              }
+              res => {}
             )
             this.$router.push('user')
           }
