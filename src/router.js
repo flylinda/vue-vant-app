@@ -45,6 +45,13 @@ const routes = [
     },
   },
   {
+    name: 'home',
+    component: () => import('./view/home'),
+    meta: {
+      title: '首页',
+    },
+  },
+  {
     name: 'loanHome',
     component: () => import('./view/loanHome'),
     meta: {

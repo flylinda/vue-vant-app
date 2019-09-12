@@ -72,7 +72,7 @@ export default {
             getConfigs().then(
               res => {}
             )
-            this.$router.push('user')
+            this.$router.push('home')
           }
         }
       )
