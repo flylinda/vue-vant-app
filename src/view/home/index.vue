@@ -19,7 +19,7 @@
         </van-col>
       </van-row>
     </div>
-    <van-collapse v-model="activeName" accordion>
+    <van-collapse v-model="activeName">
       <van-collapse-item title="基础组件" name="1">
         <div slot="right-icon"> <van-icon name="fire-o" /></div>
         <van-cell-group v-for="(item, index) in baseList" :key="index">
@@ -33,13 +33,13 @@
         </van-cell-group>
       </van-collapse-item>
       <van-collapse-item title="导航组件" name="3">
-        <div slot="right-icon"> <van-icon name="gem-o" /></div>
+        <div slot="right-icon"> <van-icon name="shop-o" /></div>
        <van-cell-group v-for="(item, index) in navList" :key="index">
           <van-cell :title="item.content" is-link :url="item.url" />
         </van-cell-group>
       </van-collapse-item>
       <van-collapse-item title="展示组件" name="4">
-        <div slot="right-icon"> <van-icon name="gem-o" /></div>
+        <div slot="right-icon"> <van-icon name="gift-card-o" /></div>
         <van-cell-group v-for="(item, index) in displayList" :key="index">
           <van-cell :title="item.content" is-link :url="item.url" />
         </van-cell-group>
@@ -58,7 +58,7 @@
 export default {
   data () {
     return {
-      activeName: '',
+      activeName: ['1'],
       baseList: [
         {
           content: '会员中心',
@@ -146,10 +146,6 @@ export default {
       width: 90%;
       margin-bottom: 10px;
       box-shadow: #f5f5f5 1px 1px 1px 1px;
-      .van-cell {
-        font-size: 17px;
-        font-weight: 500;
-      }
     }
   }
   .van-hairline--top-bottom::after, .van-hairline-unset--top-bottom::after {

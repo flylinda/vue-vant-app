@@ -128,6 +128,13 @@ const routes = [
       title: '商品详情',
     },
   },
+  {
+    name: 'footer',
+    component: () => import('./view/footer'),
+    meta: {
+      title: '底部栏',
+    },
+  },
 ]
 
 // add route path
