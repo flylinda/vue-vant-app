@@ -25,6 +25,7 @@
 </template>
 
 <script>
+// 图片的路径采取import的方式也可以实现
 export default {
   data () {
     return {
@@ -71,19 +72,19 @@ export default {
       logoList: [
         {
           key: 'gongshang',
-          url: 'https://img.yzcdn.cn/vant/cat.jpeg',
+          url: require('../../static/gongshang.jpeg'),
         },
         {
           key: 'jiaotong',
-          url: 'https://img.yzcdn.cn/vant/cat.jpeg',
+          url: require('../../static/jiaotong.jpeg'),
         },
         {
           key: 'nongye',
-          url: 'https://img.yzcdn.cn/vant/cat.jpeg',
+          url: require('../../static/nongye.jpeg'),
         },
         {
           key: 'guangda',
-          url: 'https://img.yzcdn.cn/vant/cat.jpeg',
+          url: require('../../static/guangda.jpeg'),
         },
       ],
     }
