@@ -1,5 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import foo from './view/namedViews/components/foo.vue'
+import bar from './view/namedViews/components/bar.vue'
+import baz from './view/namedViews/components/baz.vue'
+import UserProfile from './view/nastedNamedViews/components/userProfile.vue'
+import UserProfilePreview from './view/nastedNamedViews/components/userProfilePreview.vue'
 
 Vue.use(Router)
 
@@ -15,20 +20,73 @@ const routes = [
       title: '登录',
     },
   },
+  // 嵌套路由
   {
     path: '/register',
-    name: 'register',
+    // 通过一个名称来标识一个路由显得更方便，尤其是在链接一个路由或者在执行路由跳转的时候
+    // <router-link :to="{ name: 'user', params: { userId: 123 }}">User</router-link>
+    // router.push({ name: 'user', params: { userId: 123 }})
+    // 这两种方式都会把路由导航到/user/123路径
+    // name: 'register',
     component: () => import('./view/register'),
     meta: {
       title: '注册',
     },
+    children: [
+      {
+        path: '',
+        component: () => import('./view/register/components/register'),
+      },
+      {
+        path: 'finishRegister',
+        component: () => import('./view/register/components/finishRegister'),
+        meta: {
+          title: '完成注册',
+        },
+      },
+    ],
   },
+  // 命名视图
   {
-    name: 'finishRegister',
-    component: () => import('./view/register/components/finishRegister'),
-    meta: {
-      title: '完成注册',
-    },
+    path: '/namedViews',
+    component: () => import('./view/namedViews'),
+    children: [
+      {
+        path: '/now',
+        components: {
+          default: foo,
+          a: bar,
+          b: baz,
+        },
+      },
+      {
+        path: '/other',
+        components: {
+          default: baz,
+          a: bar,
+          b: foo,
+        },
+      },
+    ],
+  },
+  // 嵌套命名视图
+  {
+    path: '/settings',
+    component: () => import('./view/nastedNamedViews'),
+    children: [
+      {
+        path: 'emails',
+        component: () => import('./view/nastedNamedViews/components/userEmailsSubscriptions.vue'),
+      },
+      {
+        path: 'profile',
+        components: {
+          default: UserProfile,
+          helper: UserProfilePreview,
+        },
+      },
+    ],
+
   },
   {
     name: 'forgotPassword',
@@ -101,6 +159,13 @@ const routes = [
     },
   },
   {
+    name: 'choosePaymentCard',
+    component: () => import('./view/choosePaymentCard'),
+    meta: {
+      title: '选择支付卡',
+    },
+  },
+  {
     name: 'dailyAnalysis',
     component: () => import('./view/dailyAnalysis'),
     meta: {
@@ -142,6 +207,8 @@ routes.forEach(route => {
   route.path = route.path || '/' + (route.name || '')
 })
 
+// 修改路由模式，默认为hash
+// const router = new Router({ routes, mode: 'history' })
 const router = new Router({ routes })
 
 router.beforeEach((to, from, next) => {

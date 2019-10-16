@@ -1,5 +1,5 @@
 <template>
   <div>
-    <router-view></router-view>
+    <h3>Email Subscriptions</h3>
   </div>
 </template>

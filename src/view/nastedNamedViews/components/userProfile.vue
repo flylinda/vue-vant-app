@@ -1,5 +1,5 @@
 <template>
   <div>
-    <router-view></router-view>
+    <h3>Edit your profile</h3>
   </div>
 </template>

@@ -72,7 +72,10 @@ export default {
             getConfigs().then(
               res => {}
             )
-            this.$router.push('home')
+            // 编程式的导航
+            // this.$router.push('home')
+            // 替换掉当前的history记录
+            this.$router.replace('home')
           }
         }
       )
