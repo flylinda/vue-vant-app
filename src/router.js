@@ -200,6 +200,20 @@ const routes = [
       title: '底部栏',
     },
   },
+  {
+    name: 'holyGrail',
+    component: () => import('./view/holyGrail'),
+    meta: {
+      title: '圣杯布局',
+    },
+  },
+  {
+    name: 'actionSheet',
+    component: () => import('./view/actionSheet'),
+    meta: {
+      title: '上拉菜单',
+    },
+  },
 ]
 
 // add route path

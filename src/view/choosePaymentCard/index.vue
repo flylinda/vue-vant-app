@@ -95,7 +95,6 @@ export default {
       let logoURL = this.logoList.find(x => x.key === item.key).url
       return Object.assign(item, { backColor: backColor, logoURL: logoURL })
     })
-    console.log(this.bankCardList)
   },
   methods: {
 

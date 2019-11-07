@@ -13,6 +13,9 @@ vue-vant-app 工程示范了如何用 vant 搭建几个简单的电商页面，�
 - 跨域问题
 - 不同环境启动，打包，构建，部署
 
+### exmple
+- 弹出菜单-标题固定，内容滚动：http://localhost:8080/#/actionSheet
+
 ## 开发命令
 
 ``` bash
