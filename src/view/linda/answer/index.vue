@@ -6,7 +6,7 @@
     closeable
     position="bottom"
     :overlay="false"
-    :style="{ 'min-height': '40vh' }"
+    :style="{ 'min-height': '40vh', position: 'relative' }"
   >
   <div class="answer-wrapper">
     <div class="answer-header">

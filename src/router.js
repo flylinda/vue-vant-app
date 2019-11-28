@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import foo from './view/namedViews/components/foo.vue'
-import bar from './view/namedViews/components/bar.vue'
-import baz from './view/namedViews/components/baz.vue'
-import UserProfile from './view/nastedNamedViews/components/userProfile.vue'
-import UserProfilePreview from './view/nastedNamedViews/components/userProfilePreview.vue'
+import foo from './view/linda/namedViews/components/foo.vue'
+import bar from './view/linda/namedViews/components/bar.vue'
+import baz from './view/linda/namedViews/components/baz.vue'
+import UserProfile from './view/linda/nastedNamedViews/components/userProfile.vue'
+import UserProfilePreview from './view/linda/nastedNamedViews/components/userProfilePreview.vue'
 
 Vue.use(Router)
 
@@ -49,7 +49,7 @@ const routes = [
   // 命名视图
   {
     path: '/namedViews',
-    component: () => import('./view/namedViews'),
+    component: () => import('./view/linda/namedViews'),
     children: [
       {
         path: '/now',
@@ -72,11 +72,11 @@ const routes = [
   // 嵌套命名视图
   {
     path: '/settings',
-    component: () => import('./view/nastedNamedViews'),
+    component: () => import('./view/linda/nastedNamedViews'),
     children: [
       {
         path: 'emails',
-        component: () => import('./view/nastedNamedViews/components/userEmailsSubscriptions.vue'),
+        component: () => import('./view/linda/nastedNamedViews/components/userEmailsSubscriptions.vue'),
       },
       {
         path: 'profile',
@@ -90,128 +90,135 @@ const routes = [
   },
   {
     name: 'forgotPassword',
-    component: () => import('./view/forgotPassword'),
+    component: () => import('./view/linda/forgotPassword'),
     meta: {
       title: '忘记密码',
     },
   },
   {
     name: 'resetPassword',
-    component: () => import('./view/resetPassword'),
+    component: () => import('./view/linda/resetPassword'),
     meta: {
       title: '重置密码',
     },
   },
   {
     name: 'home',
-    component: () => import('./view/home'),
+    component: () => import('./view/linda/home'),
     meta: {
       title: '首页',
     },
   },
   {
     name: 'loanHome',
-    component: () => import('./view/loanHome'),
+    component: () => import('./view/linda/loanHome'),
     meta: {
       title: '借款首页',
     },
   },
   {
     name: 'applyMoney',
-    component: () => import('./view/applyMoney'),
+    component: () => import('./view/linda/applyMoney'),
     meta: {
       title: '申请借款',
     },
   },
   {
     name: 'personalInfo',
-    component: () => import('./view/personalInfo'),
+    component: () => import('./view/linda/personalInfo'),
     meta: {
       title: '个人信息',
     },
   },
   {
     name: 'help',
-    component: () => import('./view/help'),
+    component: () => import('./view/linda/help'),
     meta: {
       title: '帮助中心',
     },
   },
   {
     name: 'success',
-    component: () => import('./view/success'),
+    component: () => import('./view/linda/success'),
     meta: {
       title: '提现申请成功',
     },
   },
   {
     name: 'repayment',
-    component: () => import('./view/repayment'),
+    component: () => import('./view/linda/repayment'),
     meta: {
       title: '还款计划',
     },
   },
   {
     name: 'contact',
-    component: () => import('./view/contact'),
+    component: () => import('./view/linda/contact'),
     meta: {
       title: '联系人信息',
     },
   },
   {
     name: 'choosePaymentCard',
-    component: () => import('./view/choosePaymentCard'),
+    component: () => import('./view/linda/choosePaymentCard'),
     meta: {
       title: '选择支付卡',
     },
   },
   {
     name: 'dailyAnalysis',
-    component: () => import('./view/dailyAnalysis'),
+    component: () => import('./view/linda/dailyAnalysis'),
     meta: {
       title: '日分析',
     },
   },
   {
     name: 'user',
-    component: () => import('./view/user'),
+    component: () => import('./view/linda/user'),
     meta: {
       title: '会员中心',
     },
   },
   {
     name: 'cart',
-    component: () => import('./view/cart'),
+    component: () => import('./view/linda/cart'),
     meta: {
       title: '购物车',
     },
   },
   {
     name: 'goods',
-    component: () => import('./view/goods'),
+    component: () => import('./view/linda/goods'),
     meta: {
       title: '商品详情',
     },
   },
   {
     name: 'footer',
-    component: () => import('./view/footer'),
+    component: () => import('./view/linda/footer'),
     meta: {
       title: '底部栏',
     },
   },
   {
     name: 'holyGrail',
-    component: () => import('./view/holyGrail'),
+    component: () => import('./view/linda/holyGrail'),
     meta: {
       title: '圣杯布局',
     },
   },
   {
     name: 'actionSheet',
-    component: () => import('./view/actionSheet'),
+    component: () => import('./view/linda/actionSheet'),
     meta: {
       title: '上拉菜单',
+    },
+  },
+  {
+    name: 'answer',
+    component: () => import('./view/linda/answer'),
+    meta: {
+      title: '所答',
     },
   },
 ]
