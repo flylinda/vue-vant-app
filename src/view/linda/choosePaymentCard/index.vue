@@ -72,19 +72,19 @@ export default {
       logoList: [
         {
           key: 'gongshang',
-          url: require('../../static/gongshang.jpeg'),
+          url: require('../../../static/gongshang.jpeg'),
         },
         {
           key: 'jiaotong',
-          url: require('../../static/jiaotong.jpeg'),
+          url: require('../../../static/jiaotong.jpeg'),
         },
         {
           key: 'nongye',
-          url: require('../../static/nongye.jpeg'),
+          url: require('../../../static/nongye.jpeg'),
         },
         {
           key: 'guangda',
-          url: require('../../static/guangda.jpeg'),
+          url: require('../../../static/guangda.jpeg'),
         },
       ],
     }

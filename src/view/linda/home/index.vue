@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <settingListTemplate></settingListTemplate>
     <div class="home-title">
       <van-row type="flex">
         <van-col offset="1" span="5" >
@@ -131,7 +132,6 @@ export default {
       ],
     }
   },
-
 }
 </script>
 
