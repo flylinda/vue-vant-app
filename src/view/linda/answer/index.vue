@@ -3,7 +3,6 @@
   <van-button id="btn" type="primary" size="large" round :class="showPopup===true ? 'answer-btn' : 'answer-btn-origin'">提交</van-button>
   <van-popup
     v-model="showPopup"
-    closeable
     position="bottom"
     :overlay="false"
     :style="{ 'min-height': '40vh', position: 'relative' }"
