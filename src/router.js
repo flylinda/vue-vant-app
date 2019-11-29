@@ -221,6 +221,13 @@ const routes = [
       title: '所答',
     },
   },
+  {
+    name: 'haopingping',
+    component: () => import('./view/haopingping'),
+    meta: {
+      title: '数字键盘',
+    },
+  }
 ]
 
 // add route path
